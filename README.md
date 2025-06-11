@@ -146,7 +146,7 @@ from js import document, window
 from pyodide.ffi import create_proxy
 ```
 - `pyodide.ffi`: PyScript의 Python-JavaScript 연결 모듈
-- `create_proxy`: Python 함수를 JavaScript에서 사용할 수 있게 변환
+- `create_proxy`: Python 함수를 JavaScript에서 사용할 수 있게 변환을 해주는 함수
 - 마우스 클릭 이벤트를 Python 함수와 연결할 때 필수
 
 **import 방식의 차이:**
@@ -186,7 +186,10 @@ document.getElementById("game")  # 바로 사용
 ```
 
 **create_proxy가 필요한 이유**
-Python과 JavaScript는 서로 다른 언어임. 브라우저의 이벤트(클릭 등)는 JavaScript로 처리되는데, 우리는 Python 함수로 처리하고 싶기 때문에 `create_proxy`가 이 둘을 연결해주는 다리 역할을 함.
+```
+Python과 JavaScript는 서로 다른 언어임.
+브라우저의 이벤트(클릭 등)는 JavaScript로 처리되는데, 우리는 Python 함수로 처리하고 싶기 때문에 `create_proxy`가 이 둘을 연결해주는 다리 역할을 함.
+```
 
 ```python
 # create_proxy 없이 (작동 안 함)
