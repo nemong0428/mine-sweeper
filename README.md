@@ -607,7 +607,7 @@ flagged = not flagged  # 다시 False가 됨
 def countdown(n):
     print(n)
     if n > 0:
-        countdown(n - 1)  # 자기 자신을 호출
+        countdown(n - 1)  # 자기 자신을 호출 (재귀 호츌)
     else:
         print("히히 오줌 발싸!")
 
