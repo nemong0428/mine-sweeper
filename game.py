@@ -5,8 +5,8 @@ from pyodide.ffi import create_proxy
 class Minesweeper:
     def __init__(self):
         # 게임 설정
-        self.SIZE = 6          # 게임판 크기 (8x8)
-        self.MINES = 7        # 지뢰 개수
+        self.SIZE = 8          # 게임판 크기 (8x8)
+        self.MINES = 10        # 지뢰 개수
         self.CELL_SIZE = 25    # 각 칸의 픽셀 크기
         
         # 색상 상수
@@ -112,6 +112,7 @@ class Minesweeper:
             # 승리 조건 확인 (지뢰가 아닌 모든 칸을 열었을 때)
             if self.revealed_count == self.SIZE * self.SIZE - self.MINES:
                 self.game_won = True
+                window.alert("Victory!")
         
         self.draw_board()
     

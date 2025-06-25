@@ -244,18 +244,19 @@ def start_new_game(self):
 
 ### 📖 리스트 컴프리헨션문
 ```python
-#일반적인 방법
+# 일반적인 방법
 n = []
 for _ in range(5):
     n.append(0)
-#n = [0, 1, 2, 3, 4]
+# n = [0, 1, 2, 3, 4]
 
 #컴프리헨션문 사용
 n = [0 for _ in range(5)]
-#n = [0, 1, 2, 3, 4]
+# n = [0, 1, 2, 3, 4]
 ```
 파이썬 리스트 컴프리헨션문은 위와 같이 사용 가능함
 
+아래는 2차원 배열 초기화 방법
 ```python
 # 일반적인 방법
 board = []
@@ -342,7 +343,7 @@ def place_mines(self):
 [ 0,-1] [중심] [ 0,1]
 [ 1,-1] [ 1,0] [ 1,1]
 
-예: 중심이 (3,3)일 때
+예시: 중심이 (3,3)일 때
 (2,2) (2,3) (2,4)
 (3,2) (3,3) (3,4)
 (4,2) (4,3) (4,4)
@@ -548,7 +549,6 @@ def handle_left_click(self, event):
     # 지뢰를 클릭한 경우
     if self.board[y][x] == -1:
         self.game_over = True
-        window.alert("게임 오버!")
         # 모든 지뢰 표시
         for yy in range(self.SIZE):
             for xx in range(self.SIZE):
@@ -561,7 +561,7 @@ def handle_left_click(self, event):
         # 승리 조건 확인
         if self.revealed_count == self.SIZE * self.SIZE - self.MINES:
             self.game_won = True
-            window.alert("클리어!")
+            window.alert("Victory!")
     
     self.draw_board()
 ```
@@ -609,10 +609,19 @@ def countdown(n):
     if n > 0:
         countdown(n - 1)  # 자기 자신을 호출
     else:
-        print("발사!")
+        print("히히 오줌 발싸!")
 
-# 실행: countdown(3)
-# 출력: 3, 2, 1, 0, 발사!
+countdown(5)
+
+# 출력 결과
+"""
+5
+4
+3
+2
+1
+히히 오줌 발싸!
+"""
 ```
 
 ### DFS(깊이 우선 탐색)란?
@@ -847,7 +856,6 @@ class Minesweeper:
         # 지뢰를 클릭한 경우
         if self.board[y][x] == -1:
             self.game_over = True
-            window.alert("게임 오버!")
             # 모든 지뢰 표시
             for yy in range(self.SIZE):
                 for xx in range(self.SIZE):
@@ -860,7 +868,7 @@ class Minesweeper:
             # 승리 조건 확인 (지뢰가 아닌 모든 칸을 열었을 때)
             if self.revealed_count == self.SIZE * self.SIZE - self.MINES:
                 self.game_won = True
-                window.alert("클리어!")
+                window.alert("Victory!")
         
         self.draw_board()
     
