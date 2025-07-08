@@ -248,13 +248,13 @@ def start_new_game(self):
 ```python
 # 일반적인 방법
 n = []
-for _ in range(5):
-    n.append(0)
-# n = [0, 1, 2, 3, 4]
+for i in range(5):
+    n.append(i+1)
+# n = [1, 2, 3, 4, 5]
 
 #컴프리헨션문 사용
-n = [0 for _ in range(5)]
-# n = [0, 1, 2, 3, 4]
+n = [i+1 for i in range(5)]
+# n = [1, 2, 3, 4, 5]
 ```
 
 **2차원 배열 초기화 방법**
